@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_app_1/main.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+    @override
+    Widget build(BuildContext context){
+      return MaterialApp(home: Page1());
+    }
+}
+
+class Page1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Page 1"),
+      ),
+      body: Center(
+        child: MaterialButton(
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Page2()));
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Page 2"),
+      ),
+      body: Center(
+        child: MaterialButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
